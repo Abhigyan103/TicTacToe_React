@@ -1,23 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Square from './Components/Square';
 
 function App() {
+  const cSquare = () => {
+    alert("Hehe")
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="Board">
+        <div className="Row">
+          <Square val={"X"} cSquare={cSquare}/>
+          <Square val={"O"} cSquare={cSquare}/>
+          <Square val={"X"} cSquare={cSquare}/>
+        </div>
+        <div className="Row">
+          <Square val={"O"} cSquare={cSquare}/>
+          <Square val={"X"} cSquare={cSquare}/>
+          <Square val={"O"} cSquare={cSquare}/>
+        </div>
+        <div className="Row">
+          <Square val={"X"} cSquare={cSquare}/>
+          <Square val={"O"} cSquare={cSquare}/>
+          <Square val={"X"} cSquare={cSquare}/>
+        </div>
+      </div>
     </div>
   );
 }
