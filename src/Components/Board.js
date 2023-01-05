@@ -1,19 +1,22 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Square from './Square'
 function Board() {
     const [board, setBoard] = useState(["","","","","","","","",""])
     const [playerName, setPlayer] = useState("X")
+    const  changePlayer = (prevPlayer)=>{
+      console.log("Player changed from", playerName)
+      if(prevPlayer==="X") return "O"
+      else return "X"
+    }
     const cSquare = (index) => {
       setBoard((prevElem) =>{
         if(prevElem[index]==="") {
+          setPlayer(changePlayer(playerName))
           return [...prevElem.slice(0,index),playerName,...prevElem.slice(index+1,board.length)]
         }
         else return prevElem})
-        setPlayer((prevPlayer)=>{
-          if(prevPlayer==="X") return "O"
-          else return "X"
-        })
+        
     }
   return (
     <div className="Board">
