@@ -6,7 +6,7 @@ function Board() {
     const [playerName, setPlayer] = useState("X")
     const cSquare = (index) => {
       setBoard((prevElem) =>{
-        if(prevElem[index]=="") {
+        if(prevElem[index]==="") {
           return [...prevElem.slice(0,index),playerName,...prevElem.slice(index+1,board.length)]
         }
         else return prevElem})
